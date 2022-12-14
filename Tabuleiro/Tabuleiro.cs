@@ -16,9 +16,9 @@
         {
             return pecas[linhas, colunas];
         }
-        public Peca peca(Posicao posicao)
+        public Peca peca(Posicao pos)
         {
-            return pecas[posicao.linha, posicao.coluna];
+            return pecas[pos.linha, pos.coluna];
         }
 
 
@@ -53,7 +53,7 @@
 
         public bool posicaoValida(Posicao pos)
         {
-            if (pos.linha < 0 || pos.linha >= linhas || pos.coluna < 0 || pos.coluna > colunas)
+            if (pos.linha < 0 || pos.linha >= linhas || pos.coluna < 0 || pos.coluna >= colunas)
             {
                 return false;
             }
