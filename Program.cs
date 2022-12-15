@@ -11,8 +11,10 @@ namespace xadrez_console
             try
             {
                 var partida = new PartidaDeXadrez();
+
                 while (!partida.terminada)
                 {
+
                     try
                     {
                         Console.Clear();
@@ -23,7 +25,7 @@ namespace xadrez_console
                         Posicao origem = Tela.lerPosicaoXadrez().toPosicao();
                         partida.validarPosicaoDeOrigem(origem);
 
-                        bool[,] posicoesPossiveis = partida.tab.peca(origem).movimentosPossiveis();  
+                        bool[,] posicoesPossiveis = partida.tab.peca(origem).movimentosPossiveis();
 
 
                         Console.Clear();
@@ -42,10 +44,8 @@ namespace xadrez_console
                         Console.ReadLine();
                     }
                 }
-
-
-
-                Tela.imprimirTabuleiro(partida.tab);
+                Console.Clear();
+                Tela.imprimirPartida(partida);
             }
             catch (TabuleiroException e)
             {
