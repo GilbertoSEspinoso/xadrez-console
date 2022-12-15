@@ -19,7 +19,11 @@ namespace tabuleiro
 
         public void incrementarQteMovimentos()
         {
-            qteMovimentos++; //aparentemente o erro esta aqui
+            qteMovimentos++; 
+        }
+        public void decrementarQteMovimentos()
+        {
+            qteMovimentos--; 
         }
 
         public bool existeMovimentosPossiveis()
