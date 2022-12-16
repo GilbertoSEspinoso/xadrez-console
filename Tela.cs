@@ -61,7 +61,10 @@ namespace xadrez_console
         {
             for (int i = 0; i < tab.linhas; i++)
             {
+                Console.ForegroundColor = ConsoleColor.DarkCyan; // Numeração lateral
                 Console.Write(8 - i + " ");
+                Console.ResetColor();
+
                 for (int j = 0; j < tab.colunas; j++)
                 {
                     imprimirPeca(tab.peca(i, j));
@@ -69,17 +72,22 @@ namespace xadrez_console
                 }
                 Console.WriteLine();
             }
+            Console.ForegroundColor = ConsoleColor.DarkCyan; // Marcação das Letras
             Console.WriteLine("  a b c d e f g h");
+            Console.ResetColor();
         }
         public static void imprimirTabuleiro(Tabuleiro tab, bool[,] posicoesPossiveis)
         {
             ConsoleColor fundoOriginal = Console.BackgroundColor;
-            ConsoleColor fundoAlterado = ConsoleColor.DarkGray;
+            ConsoleColor fundoAlterado = ConsoleColor.Red;
 
 
             for (int i = 0; i < tab.linhas; i++)
             {
+                Console.ForegroundColor = ConsoleColor.DarkCyan;  // Numeração lateral
                 Console.Write(8 - i + " ");
+                Console.ResetColor();
+
                 for (int j = 0; j < tab.colunas; j++)
                 {
                     if (posicoesPossiveis[i, j])
@@ -95,7 +103,9 @@ namespace xadrez_console
                 }
                 Console.WriteLine();
             }
+            Console.ForegroundColor = ConsoleColor.DarkCyan; // Marcação das Letras
             Console.WriteLine("  a b c d e f g h");
+            Console.ResetColor();
             Console.BackgroundColor = fundoOriginal;
         }
 
@@ -112,7 +122,9 @@ namespace xadrez_console
         {
             if (peca == null)
             {
+                Console.ForegroundColor = ConsoleColor.DarkGray;  // Cor da marcação do tabuleiro
                 Console.Write("- ");
+                Console.ResetColor();
             }
             else
             {
